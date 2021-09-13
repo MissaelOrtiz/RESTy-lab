@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 const Controls = ({ valueUrl, valueRawJson, onUrlChange, onMethodChange, onRawJsonChange, onSubmit }) => (
   <>
     <form>
-      <input type="text" placeholder="URL"/>
-      <section>
+      <input type="text" aria-label="urlTextbox" placeholder="URL" onChange={onUrlChange}/>
+      <section aria-label="methodSelector">
         <label htmlFor="GET">
               GET
           <input type="radio" name="method" onChange={onMethodChange} value="GET" id="GET"/>
@@ -28,6 +28,7 @@ const Controls = ({ valueUrl, valueRawJson, onUrlChange, onMethodChange, onRawJs
           <input type="radio" name="method" onChange={onMethodChange} value="DELETE" id="DELETE"/>
         </label>
       </section>
+      <input type="text" aria-label="rawJsonTextbox" placeholder="Raw JSON body" onChange={onRawJsonChange}/>
     </form>
   </>
 );

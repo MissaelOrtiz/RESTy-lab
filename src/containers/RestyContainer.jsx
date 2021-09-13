@@ -4,7 +4,7 @@ import Controls from '../components/RESTy/Controls';
 export default class RestyContainer extends Component {
   state = {
     url: '',
-    method: 'GET',
+    method: '',
     rawJson: '',
     res: ''
   }
@@ -41,7 +41,9 @@ export default class RestyContainer extends Component {
           onRawJsonChange={this.handleRawJsonChange}
           onSubmit={this.handleSubmit}
         />
+        {this.state.url}
         {this.state.method}
+        {this.state.rawJson}
       </div>
     );
   }
