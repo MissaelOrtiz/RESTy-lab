@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import Controls from '../components/RESTy/Controls';
 
 export default class RestyContainer extends Component {
   state = {
     url: '',
-    method: '',
+    method: 'GET',
     rawJson: '',
     res: ''
   }
@@ -29,9 +30,18 @@ export default class RestyContainer extends Component {
   }
 
   render() {
+    const { url, rawJson, /*res*/ } = this.state;
     return (
       <div>
-        hello
+        <Controls 
+          valueUrl={url} 
+          valueRawJson={rawJson}
+          onUrlChange={this.handleURLChange}
+          onMethodChange={this.handleMethodChange}
+          onRawJsonChange={this.handleRawJsonChange}
+          onSubmit={this.handleSubmit}
+        />
+        {this.state.method}
       </div>
     );
   }
