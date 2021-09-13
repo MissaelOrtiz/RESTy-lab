@@ -8,9 +8,41 @@
     padding-left: 2vw;
     text-align: left;
 }
+/* CONTAINERS */
+.controls {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
+.methodSelector {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+/* BROAD SELECTORS */
+input[type=radio] {
+    display: none;
+}
+div + input[type=radio]:checked {
+    background: blue;
+}
+
+/* SINGLE SELECTORS */
 .smallText {
     font-size: 1.25rem;
     font-weight: normal;
     padding-left: 2vw;
+}
+
+.urlTextbox {
+    width: 80vw;
+}
+
+.rawJsonTextbox {
+    width: 80vw;
+    height: 40vh;
 }

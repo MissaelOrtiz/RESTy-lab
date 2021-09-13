@@ -1,36 +1,38 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../styles/RestyCss.css';
 
 const Controls = ({ valueUrl, valueRawJson, onUrlChange, onMethodChange, onRawJsonChange, onSubmit }) => (
-  <>
+  <div className={styles.controls}>
     <form>
-      <input type="text" aria-label="urlTextbox" placeholder="URL" onChange={onUrlChange}/>
-      <section aria-label="methodSelector">
+      <input type="text" aria-label="urlTextbox" placeholder="URL" onChange={onUrlChange} value={valueUrl} className={styles.urlTextbox}/>
+      <section aria-label="methodSelector" className={styles.methodSelector}>
         <label htmlFor="GET">
-              GET
+          <div>GET</div>
           <input type="radio" name="method" onChange={onMethodChange} value="GET" id="GET"/>
         </label>
         <label htmlFor="POST">
-              POST
+          <div>POST</div>
           <input type="radio" name="method" onChange={onMethodChange} value="POST" id="POST"/>
         </label>
         <label htmlFor="PUT">
-              PUT
+          <div>PUT</div>
           <input type="radio" name="method" onChange={onMethodChange} value="PUT" id="PUT"/>
         </label>
         <label htmlFor="PATCH">
-              PATCH
+          <div>PATCH</div>
           <input type="radio" name="method" onChange={onMethodChange} value="PATCH" id="PATCH"/>
         </label>
         <label htmlFor="DELETE">
-              DELETE
+          <div>DELETE</div>
           <input type="radio" name="method" onChange={onMethodChange} value="DELETE" id="DELETE"/>
         </label>
+        <button onSubmit={onSubmit}>GO!</button>
       </section>
-      <input type="text" aria-label="rawJsonTextbox" placeholder="Raw JSON body" onChange={onRawJsonChange}/>
+      <input type="text" aria-label="rawJsonTextbox" placeholder="Raw JSON body" onChange={onRawJsonChange} value={valueRawJson} className={styles.rawJsonTextbox}/>
     </form>
-  </>
+  </div>
 );
 
 Controls.propTypes = {
