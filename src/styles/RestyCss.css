@@ -1,0 +1,15 @@
+.Header {
+    width: 100vw;
+    height: 7vh;
+    background: rgb(24, 71, 109);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    padding-left: 2vw;
+    text-align: left;
+}
+
+.smallText {
+    font-size: 1.25rem;
+    font-weight: normal;
+}
