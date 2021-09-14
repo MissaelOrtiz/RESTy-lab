@@ -92,6 +92,7 @@ exports[`Controls displays a form with two inputs, five radio selections, and  a
       </div>
     </label>
     <button
+      aria-label="submit-button"
       class="selectorName"
     >
       GO!

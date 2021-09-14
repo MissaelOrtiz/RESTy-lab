@@ -109,6 +109,7 @@ exports[`App component renders App 1`] = `
             </div>
           </label>
           <button
+            aria-label="submit-button"
             class="selectorName"
           >
             GO!

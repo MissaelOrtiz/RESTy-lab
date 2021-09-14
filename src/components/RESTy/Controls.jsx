@@ -28,7 +28,7 @@ const Controls = ({ valueUrl, valueRawJson, onChange, onSubmit }) => (
           <input type="radio" name="method" value="DELETE" id="DELETE"/>
           <div className={styles.selectorName}>DELETE</div>
         </label>
-        <button className={styles.selectorName}>GO!</button>
+        <button className={styles.selectorName} aria-label="submit-button">GO!</button>
       </section>
       <input type="text" aria-label="rawJsonTextbox" placeholder="Raw JSON body" value={valueRawJson} name="rawJson" className={styles.rawJsonTextbox}/>
     </form>
