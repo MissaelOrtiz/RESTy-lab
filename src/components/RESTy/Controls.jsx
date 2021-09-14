@@ -5,32 +5,32 @@ import styles from '../../styles/RestyCss.css';
 
 const Controls = ({ valueUrl, valueRawJson, onChange, onSubmit }) => (
   <div className={styles.controls}>
-    <form>
-      <input type="text" aria-label="urlTextbox" placeholder="URL" onChange={onChange} value={valueUrl} className={styles.urlTextbox}/>
+    <form onSubmit={onSubmit} onChange={onChange}>
+      <input type="text" aria-label="urlTextbox" placeholder="URL" value={valueUrl} name="url" className={styles.urlTextbox}/>
       <section aria-label="methodSelector" className={styles.methodSelector}>
         <label htmlFor="GET">
-          <input type="radio" name="method" onChange={onChange} value="get" id="GET"/>
+          <input type="radio" name="method" value="GET" id="GET"/>
           <div className={styles.selectorName}>GET</div>
         </label>
         <label htmlFor="POST">
-          <input type="radio" name="method" onChange={onChange} value="post" id="POST"/>
+          <input type="radio" name="method" value="POST" id="POST"/>
           <div className={styles.selectorName}>POST</div>
         </label>
         <label htmlFor="PUT">
-          <input type="radio" name="method" onChange={onChange} value="put" id="PUT"/>
+          <input type="radio" name="method" value="PUT" id="PUT"/>
           <div className={styles.selectorName}>PUT</div>
         </label>
         <label htmlFor="PATCH">
-          <input type="radio" name="method" onChange={onChange} value="patch" id="PATCH"/>
+          <input type="radio" name="method" value="PATCH" id="PATCH"/>
           <div className={styles.selectorName}>PATCH</div>
         </label>
         <label htmlFor="DELETE">
-          <input type="radio" name="method" onChange={onChange} value="delete" id="DELETE"/>
+          <input type="radio" name="method" value="DELETE" id="DELETE"/>
           <div className={styles.selectorName}>DELETE</div>
         </label>
-        <button onSubmit={onSubmit} className={styles.selectorName}>GO!</button>
+        <button className={styles.selectorName}>GO!</button>
       </section>
-      <input type="text" aria-label="rawJsonTextbox" placeholder="Raw JSON body" onChange={onChange} value={valueRawJson} className={styles.rawJsonTextbox}/>
+      <input type="text" aria-label="rawJsonTextbox" placeholder="Raw JSON body" value={valueRawJson} name="rawJson" className={styles.rawJsonTextbox}/>
     </form>
   </div>
 );

@@ -9,7 +9,7 @@ const Display = ({ res }) => (
 );
 
 Display.propTypes = {
-  res: PropTypes.object,
+  res: PropTypes.object || PropTypes.array,
 };
 
 export default Display;

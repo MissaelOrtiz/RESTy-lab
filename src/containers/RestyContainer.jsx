@@ -19,8 +19,25 @@ export default class RestyContainer extends Component {
     this.setState({ res });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
+    const { url, method, rawJson } = this.state;
+
+    let req;
+
+    if(method === 'GET') {
+      req = await fetch(`${url}`, {
+        method
+      });
+    } else {
+      req = await fetch(`${url}`, {
+        method,
+        body: JSON.stringify(rawJson)
+      });
+    }
+    
+    const res = await req.json();
+    this.handleRes(res);
   }
 
   render() {
