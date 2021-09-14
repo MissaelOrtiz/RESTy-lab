@@ -1,5 +1,10 @@
 import React from 'react';
+import RestyContainer from '../../containers/RestyContainer';
+import Header from '../RESTy/Header';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return <>
+    <Header />
+    <RestyContainer />
+  </>;
 }
