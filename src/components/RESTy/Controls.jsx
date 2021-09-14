@@ -5,7 +5,7 @@ import styles from '../../styles/RestyCss.css';
 
 const Controls = ({ valueUrl, valueRawJson, onChange, onSubmit }) => (
   <div className={styles.controls}>
-    <form onSubmit={onSubmit} onChange={onChange}>
+    <form onSubmit={onSubmit} onChange={onChange} data-testid="controls-form">
       <input type="text" aria-label="urlTextbox" placeholder="URL" value={valueUrl} name="url" className={styles.urlTextbox}/>
       <section aria-label="methodSelector" className={styles.methodSelector}>
         <label htmlFor="GET">
