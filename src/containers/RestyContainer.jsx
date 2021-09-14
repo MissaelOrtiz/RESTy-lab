@@ -1,24 +1,18 @@
 import React, { Component } from 'react';
 import Controls from '../components/RESTy/Controls';
+import Display from '../components/RESTy/Display';
+import styles from '../styles/RestyCss.css';
 
 export default class RestyContainer extends Component {
   state = {
     url: '',
     method: '',
     rawJson: '',
-    res: ''
+    res: { hello: 'world' }
   }
 
-  handleURLChange = (event) => {
-    this.setState({ url: event.target.value });
-  }
-
-  handleMethodChange = (event) => {
-    this.setState({ method: event.target.value });
-  }
-
-  handleRawJsonChange = (event) => {
-    this.setState({ rawJson: event.target.value });
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
   }
 
   handleRes = (res) => {
@@ -30,20 +24,16 @@ export default class RestyContainer extends Component {
   }
 
   render() {
-    const { url, rawJson, /*res*/ } = this.state;
+    const { url, rawJson, res } = this.state;
     return (
-      <div>
+      <div className={styles.container}>
         <Controls 
           valueUrl={url} 
           valueRawJson={rawJson}
-          onUrlChange={this.handleURLChange}
-          onMethodChange={this.handleMethodChange}
-          onRawJsonChange={this.handleRawJsonChange}
+          onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         />
-        {this.state.url}
-        {this.state.method}
-        {this.state.rawJson}
+        <Display res={res} />
       </div>
     );
   }

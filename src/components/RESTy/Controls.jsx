@@ -3,34 +3,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../../styles/RestyCss.css';
 
-const Controls = ({ valueUrl, valueRawJson, onUrlChange, onMethodChange, onRawJsonChange, onSubmit }) => (
+const Controls = ({ valueUrl, valueRawJson, onChange, onSubmit }) => (
   <div className={styles.controls}>
     <form>
-      <input type="text" aria-label="urlTextbox" placeholder="URL" onChange={onUrlChange} value={valueUrl} className={styles.urlTextbox}/>
+      <input type="text" aria-label="urlTextbox" placeholder="URL" onChange={onChange} value={valueUrl} className={styles.urlTextbox}/>
       <section aria-label="methodSelector" className={styles.methodSelector}>
         <label htmlFor="GET">
-          <div>GET</div>
-          <input type="radio" name="method" onChange={onMethodChange} value="GET" id="GET"/>
+          <input type="radio" name="method" onChange={onChange} value="get" id="GET"/>
+          <div className={styles.selectorName}>GET</div>
         </label>
         <label htmlFor="POST">
-          <div>POST</div>
-          <input type="radio" name="method" onChange={onMethodChange} value="POST" id="POST"/>
+          <input type="radio" name="method" onChange={onChange} value="post" id="POST"/>
+          <div className={styles.selectorName}>POST</div>
         </label>
         <label htmlFor="PUT">
-          <div>PUT</div>
-          <input type="radio" name="method" onChange={onMethodChange} value="PUT" id="PUT"/>
+          <input type="radio" name="method" onChange={onChange} value="put" id="PUT"/>
+          <div className={styles.selectorName}>PUT</div>
         </label>
         <label htmlFor="PATCH">
-          <div>PATCH</div>
-          <input type="radio" name="method" onChange={onMethodChange} value="PATCH" id="PATCH"/>
+          <input type="radio" name="method" onChange={onChange} value="patch" id="PATCH"/>
+          <div className={styles.selectorName}>PATCH</div>
         </label>
         <label htmlFor="DELETE">
-          <div>DELETE</div>
-          <input type="radio" name="method" onChange={onMethodChange} value="DELETE" id="DELETE"/>
+          <input type="radio" name="method" onChange={onChange} value="delete" id="DELETE"/>
+          <div className={styles.selectorName}>DELETE</div>
         </label>
-        <button onSubmit={onSubmit}>GO!</button>
+        <button onSubmit={onSubmit} className={styles.selectorName}>GO!</button>
       </section>
-      <input type="text" aria-label="rawJsonTextbox" placeholder="Raw JSON body" onChange={onRawJsonChange} value={valueRawJson} className={styles.rawJsonTextbox}/>
+      <input type="text" aria-label="rawJsonTextbox" placeholder="Raw JSON body" onChange={onChange} value={valueRawJson} className={styles.rawJsonTextbox}/>
     </form>
   </div>
 );
@@ -38,9 +38,7 @@ const Controls = ({ valueUrl, valueRawJson, onUrlChange, onMethodChange, onRawJs
 Controls.propTypes = {
   valueUrl: PropTypes.string.isRequired,
   valueRawJson: PropTypes.string.isRequired, 
-  onUrlChange: PropTypes.func.isRequired, 
-  onMethodChange: PropTypes.func.isRequired, 
-  onRawJsonChange: PropTypes.func.isRequired, 
+  onChange: PropTypes.func.isRequired, 
   onSubmit: PropTypes.func.isRequired
 };
 
